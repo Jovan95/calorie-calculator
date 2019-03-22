@@ -34,7 +34,7 @@ class LoginForm extends React.Component {
       const { data,errors } = this.state;
       return (
         <Form onSubmit = {this.onSubmit}>
-          <Form.Field>
+          <Form.Field error={!!errors.email}>
             <label htmlFor='email'>Email</label>
             <input
               type='email'
@@ -46,7 +46,7 @@ class LoginForm extends React.Component {
               />
               {errors.email && <InlineError text={errors.email} />}
           </Form.Field>
-          <Form.Field>
+          <Form.Field error={!!errors.password}>
             <label htmlFor='password'>Email</label>
             <input
               type='password'
