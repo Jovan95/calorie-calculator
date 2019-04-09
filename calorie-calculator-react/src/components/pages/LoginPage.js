@@ -1,12 +1,12 @@
 import React from 'react';
 import LoginForm from '../forms/LoginForm';
 import PropTypes from 'prop-types';
-import { connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { login } from '../../actions/auth';
 
 class LoginPage extends React.Component  {
 
-  submit = data => this.props.login(data).then(() => this.props.push("/"));
+  submit = data => this.props.login(data).then(() => this.props.history.push("/"));
 
   render () {
     return (
