@@ -27,8 +27,6 @@ class LoginForm extends React.Component {
         this.props
         .submit(this.state.data)
         .catch(err => {
-          console.log(JSON.stringify(err))
-          console.log(err.response.data.errors)
           this.setState({errors: err.response.data.errors, loading: false})}
         );
       }

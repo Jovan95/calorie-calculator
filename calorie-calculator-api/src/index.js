@@ -5,7 +5,7 @@ import auth from "./routes/auth"
 import bodyParser from 'body-parser';
 
 const app = express();
-mongoose.connect("mongodb://localhost/calorie-calculator", { useMongoClient: true});
+mongoose.connect("mongodb://localhost/calorie-calculator",  { useNewUrlParser: true });
 app.use(bodyParser.json());
 
 
