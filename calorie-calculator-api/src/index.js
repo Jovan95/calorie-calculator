@@ -10,7 +10,7 @@ dotenv.config()
 const app = express();
 console.log(dotenv.config())
 mongoose.Promise = Promise;
-mongoose.connect('mongodb://localhost/calorie-calculator',  { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URL,  { useNewUrlParser: true });
 app.use(bodyParser.json());
 
 
