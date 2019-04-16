@@ -20,7 +20,7 @@ schema.methods.generateJWT = function generateJWT() {
     {
     email: this.email
     },
-    "secretkey")
+    'secretkey')
 };
 
 schema.methods.toAuthJSON = function toAuthJSON() {

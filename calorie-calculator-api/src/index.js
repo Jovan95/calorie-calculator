@@ -3,9 +3,14 @@ import path from 'path';
 import mongoose from 'mongoose';
 import auth from "./routes/auth"
 import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
+import Promise from 'bluebird';
 
+dotenv.config()
 const app = express();
-mongoose.connect("mongodb://localhost/calorie-calculator",  { useNewUrlParser: true });
+console.log(dotenv.config())
+mongoose.Promise = Promise;
+mongoose.connect('mongodb://localhost/calorie-calculator',  { useNewUrlParser: true });
 app.use(bodyParser.json());
 
 
