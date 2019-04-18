@@ -14,8 +14,8 @@ mongoose.connect(process.env.MONGODB_URL,  { useNewUrlParser: true });
 app.use(bodyParser.json());
 
 
-app.use('/api/auth', auth)
-
+app.use('/api/auth', auth);
+app.use('/api/singup', singup);
 
 
 app.get('/*', (req, res) => {
