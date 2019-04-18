@@ -1,7 +1,7 @@
 import React from 'react';
 import "semantic-ui-css/semantic.min.css";
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import App from './App';
 import { createStore, applyMiddleware} from 'redux';
 import { Provider } from 'react-redux';
@@ -24,10 +24,9 @@ if(localStorage.cCalJWT) {
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
-      <App />
+      <Route  component={App}/>
     </Provider>
   </BrowserRouter>,
    document.getElementById('root')
 );
-
 serviceWorker.unregister();
