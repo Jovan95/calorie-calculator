@@ -1,7 +1,8 @@
 import express from 'express';
 import path from 'path';
 import mongoose from 'mongoose';
-import auth from "./routes/auth"
+import auth from "./routes/auth";
+import singup from "./routes/singup"
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import Promise from 'bluebird';
@@ -19,6 +20,7 @@ app.use('/api/singup', singup);
 
 
 app.get('/*', (req, res) => {
+  console.log('req 1', req);
   res.sendFile(path.join(__dirname, 'index.html'));
 })
 
