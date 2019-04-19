@@ -20,7 +20,7 @@ app.use('/api/singup', singup);
 
 
 app.get('/*', (req, res) => {
-  console.log('req 1', req);
+  console.log('req 2', req);
   res.sendFile(path.join(__dirname, 'index.html'));
 })
 

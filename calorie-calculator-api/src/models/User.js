@@ -26,7 +26,7 @@ schema.methods.setConfirmationToken = function setConfirmationToken() {
   this.confirmationToken = this.generateJWT();
 }
 
-schema.methods.sendConfirmationEmail = function sendConfirmationEmail(){
+schema.methods.generateConfirmationUrl = function generateConfirmationUrl(){
   return `${process.env.HOST}/confirmation/${this.confirmationToken}`
 }
 
