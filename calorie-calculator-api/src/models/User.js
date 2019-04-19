@@ -8,7 +8,8 @@ const schema = new mongoose.Schema(
   {
   email : {type: String, required: true, lowercase: true, index: true, unique: true},
   passwordHash: {type: String, required: true},
-  confirmed: { type: Boolean, default: false}
+  confirmed: { type: Boolean, default: false},
+  confirmationToken: { type: String, deafault: ""}
   },
   { timestamps: true}
 );
@@ -19,6 +20,14 @@ schema.methods.isValidPassword = function isValidPassword(password) {
 
 schema.methods.setPassword = function setPassword(password) {
   this.passwordHash = bcrypt.hashSync(password, 10);
+}
+
+schema.methods.setConfirmationToken = function setConfirmationToken() {
+  this.confirmationToken = this.generateJWT();
+}
+
+schema.methods.sendConfirmationEmail = function sendConfirmationEmail(){
+  return `${process.env.HOST}/confirmation/${this.confirmationToken}`
 }
 
 schema.methods.generateJWT = function generateJWT() {
