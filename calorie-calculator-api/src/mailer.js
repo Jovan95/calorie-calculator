@@ -1,6 +1,6 @@
-import nodemailer from 'nodemailer';
+import nodemailer from "nodemailer";
 
-const from = '"CalorieCalculator" <info@calore-calculator.com>';
+const from = '"CalorieCalculator" <info@calorie-calculator.com>';
 
 function setup() {
   return nodemailer.createTransport({
@@ -10,22 +10,20 @@ function setup() {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS
     }
-  })
+  });
 }
 
-
 export function sendConfirmationEmail(user) {
-  const transport = setup();
+  const tranport = setup();
   const email = {
     from,
     to: user.email,
-    subject: "Welcome to CalorieCalculator",
+    subject: 'Welcome to CalorieCalculator',
     text: `
-      Welcome to CalorieCalculator. Please confirm your email.
-
-      ${user.generateConfirmationUrl}
+    Welcome to CalorieCalculator. Please, confirm your email.
+    ${user.generateConfirmationUrl()}
     `
-  }
+  };
 
-  trnasport.sendMail(email);
+  tranport.sendMail(email);
 }
