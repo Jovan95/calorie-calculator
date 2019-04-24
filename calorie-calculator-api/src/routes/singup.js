@@ -12,12 +12,13 @@ router.post("/", (req, res) => {
   user.setConfirmationToken();
   user
     .save()
-    .then(userRecord => {      
+    .then(userRecord => {
       sendConfirmationEmail(userRecord);
       res.json({ user: userRecord.toAuthJSON() });
     })
     .catch(err => res.status(400).json({ errors: parseErrors(err.errors) }));
 });
+
 
 
 export default router;

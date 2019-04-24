@@ -10,6 +10,8 @@ import * as serviceWorker from './serviceWorker';
 import rootReducer from './rootReducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { userLoggedIn } from './actions/auth';
+import decode from 'jwt-decode';
+
 
 const store = createStore(
   rootReducer,
@@ -17,7 +19,12 @@ const store = createStore(
 );
 
 if(localStorage.cCalJWT) {
-  const user = { token: localStorage.cCalJWT };
+  const payload = decode(localStorage.cCalJWT);
+  const user = {
+    token: localStorage.cCalJWT,
+    email: payload.email,
+    confirmed: payload.confirmed
+   };
   store.dispatch(userLoggedIn(user));
 }
 
