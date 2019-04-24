@@ -20,6 +20,7 @@ const store = createStore(
 
 if(localStorage.cCalJWT) {
   const payload = decode(localStorage.cCalJWT);
+  
   const user = {
     token: localStorage.cCalJWT,
     email: payload.email,
