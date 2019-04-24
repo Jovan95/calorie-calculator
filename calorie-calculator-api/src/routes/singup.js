@@ -12,7 +12,7 @@ router.post("/", (req, res) => {
   user.setConfirmationToken();
   user
     .save()
-    .then(userRecord => {
+    .then(userRecord => {      
       sendConfirmationEmail(userRecord);
       res.json({ user: userRecord.toAuthJSON() });
     })

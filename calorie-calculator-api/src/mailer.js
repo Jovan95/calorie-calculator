@@ -15,6 +15,7 @@ function setup() {
 
 export function sendConfirmationEmail(user) {
   const tranport = setup();
+  console.log(setup())
   const email = {
     from,
     to: user.email,
