@@ -5,27 +5,32 @@ import PropTypes from 'prop-types';
 import Validator from 'validator';
 
 class ForgotPasswordForm extends React.Component {
-  state = {
-    data: {
-      email: ''
-    },
-    loading: false,
-    errors: {}
-  };
+  constructor(props) {
+    super(props);
 
-onSubmit = () => {
-  const errors = this.validate(this.state.data);
-  this.setState({ errors })
+    this.state = {
+      data: {
+        email: ""
+      },
+      loading: false,
+      errors: {}
+    };
 
-  if(Object.keys(errors).lenght === 0) {
-    this.setState({ loading : true})
-    this.props
-              .submit(this.state.data)
-              .catch(err => {
-                this.setState({errors: err.response.data.errors, lodaing: false})
-              })
+    this.onSubmit = this.onSubmit.bind(this);
   }
-}
+
+  onSubmit(e) {
+    const errors = this.validate(this.state.data);
+    this.setState({ errors })
+
+    if (Object.keys(errors).length === 0) {
+      this.setState({ loading : true})
+      this.props.submit(this.state.data)
+                .catch(err => {
+                  this.setState({errors: err.response.data.errors, loading: false})
+                })
+    }
+  }
 
 validate = (data) => {
   const errors = {};
@@ -40,7 +45,7 @@ onChange = e =>
   });
 
   render() {
-    { data, loading, errors } = this.state;
+    const { data, loading, errors } = this.state;
     return(
       <div>
         <Form onSubmit={this.onSubmit} loading={loading}>
@@ -55,8 +60,8 @@ onChange = e =>
                    onChange={this.onChange}
                   />
                   {errors.email && <InlineError text={errors.email} />}
-            <Button primary>Reset</Button>
-          <Form.Field>
+          </Form.Field>
+          <Button primary>Reset</Button>
         </Form>
       </div>
     )

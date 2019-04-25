@@ -1,4 +1,4 @@
-import nodemailer from "nodemailer";
+ const nodemailer = require('nodemailer');
 
 const from = '"CalorieCalculator" <info@calorie-calculator.com>';
 
@@ -37,7 +37,7 @@ export function sendResetPasswordEmail(user) {
     subject: 'Password RESET',
     text: `
     Follow this link to reset password:
-    ${user.generateResetPasswordUrl()}
+    ${user.generateResetPasswordUrl(user)}
     `
   };
 

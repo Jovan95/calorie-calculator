@@ -16,7 +16,7 @@ submit = data => this.props.resetPasswordRequest(data)
                      );
 
   render() {
-    { success } = this.state;
+    const { success } = this.state;
     return(
       <div>
         {

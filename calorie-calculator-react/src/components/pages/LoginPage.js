@@ -3,7 +3,7 @@ import LoginForm from '../forms/LoginForm';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { login } from '../../actions/auth';
-import { Link } from 'react-router-tom';
+import { Link } from 'react-router-dom';
 
 class LoginPage extends React.Component  {
 
