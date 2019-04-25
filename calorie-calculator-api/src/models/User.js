@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+  import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import uniqueValidator from 'mongoose-unique-validator';
@@ -29,6 +29,20 @@ schema.methods.setConfirmationToken = function setConfirmationToken() {
 schema.methods.generateConfirmationUrl = function generateConfirmationUrl(){
   return `${process.env.HOST}/confirmation/${this.confirmationToken}`
 }
+
+schema.methods.generateResetPasswordUrl = function generateResetPasswordUrl(){
+  return `${process.env.Host}/reset_password/${this.generateResetPasswordToken()}`
+}
+
+schema.methods.generateResetPasswordUrl = function generateResetPasswordToken() {
+  return jwt.sign(
+    {
+    _id: this._id
+    },
+    process.env.JWT_SECRET,
+    {expiresIn: '1s'}
+  )
+};
 
 schema.methods.generateJWT = function generateJWT() {
   return jwt.sign(

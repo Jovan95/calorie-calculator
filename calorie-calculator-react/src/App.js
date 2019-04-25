@@ -8,6 +8,7 @@ import DashboardPage from './components/pages/DashboardPage';
 import UserRoute from './components/routes/UserRoute';
 import GuestRoute from './components/routes/GuestRoute';
 import PropTypes from "prop-types";
+import ForgotPasswordPage from './components/pages/ForgotPasswordPage';
 
 const App = ({ location }) =>
 <div className="ui-container">
@@ -26,6 +27,11 @@ const App = ({ location }) =>
     path="/login"
     exact component={LoginPage}
     />
+    <GuestRoute
+      location={location}
+      path="/forgot_password"
+      exact component={ForgotPasswordPage}
+      />
   <GuestRoute
     location={location}
     path="/singup"

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
@@ -7,7 +7,7 @@ import { logout } from '../../actions/auth';
 const HomePage = ({ isAuthenticated, logout }) => (
   <div>
     <h1>HomePage</h1>
-    {isAuthenticated ? 
+    {isAuthenticated ?
       (<button onClick={ () => logout() }>Logout</button>) :
       (<div><Link to="/login">Login</Link> or <Link to="/singup">Sing Up</Link></div>)
     }
