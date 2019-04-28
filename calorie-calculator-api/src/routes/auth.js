@@ -53,4 +53,22 @@ router.post('/validate_token', (req, res) => {
   })
 })
 
+router.post('/reset_password' (req, res) => {
+  const { token, password } req.body.data;
+  jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+    if (err) {
+      res.status(401).json({errors: {global : "Invalid Token"}});
+    } else {
+      User.findOne({ _id: decoded._id }).then(user => {
+        if (user) {
+          user.setPassword(password);
+          user.save().then(() => res.json({}))
+        } else {
+          res.status(404).json({errors: { global: "Invalid token"}})
+        }
+      })
+    }
+  })
+});
+
 export default router;

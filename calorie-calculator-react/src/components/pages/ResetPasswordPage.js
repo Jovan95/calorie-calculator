@@ -4,6 +4,7 @@ import { validateToken } from '../../actions/auth';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ResetPasswordForm from '../forms/ResetPasswordForm';
+import { resetPassword } from '../../actions/auth';
 
 
 class ResetPasswordPage extends React.Component {
@@ -18,6 +19,8 @@ componentDidMount() {
   .catch(() => this.setState({loading: false, success: false }))
 }
 
+submit = data => this.props.resetPassword(data)
+                           .then(() => this.props.history.push("/login"))
 
   render() {
     const { loading, success } = this.state;
@@ -41,7 +44,11 @@ ResetPasswordPage.propTypes = {
     params: PropTypes.shape({
       token: PropTypes.string.isRequired
     }).isRequired
+  }).isRequired,
+  resetPassword: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired
   }).isRequired
 }
 
-export default connect(null,{ validateToken })(ResetPasswordPage);
+export default connect(null,{ validateToken, resetPassword })(ResetPasswordPage);
