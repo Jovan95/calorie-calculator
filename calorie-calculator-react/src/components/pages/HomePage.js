@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
+import './HomePage.css';
 
 const HomePage = ({ isAuthenticated, logout }) => (
-  <div>
-    <h1>HomePage</h1>
+  <div className="text-center">
+    <h1>Welcome to Calore Calculator!</h1>
     {isAuthenticated ?
-      (<button onClick={ () => logout() }>Logout</button>) :
-      (<div><Link to="/login">Login</Link> or <Link to="/singup">Sing Up</Link></div>)
+      (<button className="hpButton" onClick={ () => logout() }>Logout</button>) :
+      (<div><Link className="linkHp" to="/login">Login</Link> or <Link className="linkHp" to="/singup">Sing Up</Link></div>)
     }
   </div>
 );
