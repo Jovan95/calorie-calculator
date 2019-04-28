@@ -33,5 +33,5 @@ export const resetPasswordRequest = ({ email }) => () =>
     api.user.resetPasswordRequest(email);
 
 
-export const validateToken = ({ token }) => () =>
+export const validateToken = (token) => () =>
     api.user.validateToken(token);

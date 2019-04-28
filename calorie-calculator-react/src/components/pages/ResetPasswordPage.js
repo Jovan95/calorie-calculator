@@ -3,6 +3,7 @@ import { Message } from 'semantic-ui-react';
 import { validateToken } from '../../actions/auth';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import ResetPasswordForm from '../forms/ResetPasswordForm';
 
 
 class ResetPasswordPage extends React.Component {
@@ -20,11 +21,13 @@ componentDidMount() {
 
   render() {
     const { loading, success } = this.state;
+    const token = this.props.match.params.token;
+
     return(
       <div>
         {loading && !success && <Message>Validating your token</Message>}
-        {!loading && success && <Message>forms</Message>}
-        {!loading && !success && <Message>Invalid Token</Message>}
+        {!loading && success && <ResetPasswordForm submit={this.submit} token={token} />}
+        {!loading && !success && <Message negative>Invalid Token</Message>}
 
       </div>
     )
