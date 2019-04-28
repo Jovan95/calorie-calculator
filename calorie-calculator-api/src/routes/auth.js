@@ -53,8 +53,8 @@ router.post('/validate_token', (req, res) => {
   })
 })
 
-router.post('/reset_password' (req, res) => {
-  const { token, password } req.body.data;
+router.post('/reset_password', (req, res) => {
+  const { token, password } = req.body.data;
   jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
     if (err) {
       res.status(401).json({errors: {global : "Invalid Token"}});

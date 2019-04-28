@@ -10,7 +10,7 @@ class ForgotPasswordPage extends React.Component {
     success: false
   };
 
-submit = data => this.props.resetPasswordRequest(data)
+  submit = data => this.props.resetPasswordRequest(data)
                 .then(
                       () => this.setState({ success: true})
                      );
