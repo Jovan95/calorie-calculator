@@ -72,7 +72,7 @@ validate = data => {
             />
             {errors.password && <InlineError text={errors.password} />}
           </Form.Field>
-          <Button>Reset</Button>
+          <Button basic color='red'>Reset</Button>
         </Form>
       </div>
     )

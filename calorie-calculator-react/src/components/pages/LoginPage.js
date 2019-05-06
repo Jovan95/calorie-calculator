@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { login } from '../../actions/auth';
 import { Link } from 'react-router-dom';
+import './LoginPage.scss';
 
 class LoginPage extends React.Component  {
 
@@ -11,12 +12,12 @@ class LoginPage extends React.Component  {
 
   render () {
     return (
-      <div>
+      <div className="loginPage">
         <h1>Login page</h1>
-
+      <div className="loginPageDiv">
         <LoginForm submit={this.submit} />
-
         <Link to="/forgot_password">Forgot Password?</Link>
+      </div>
       </div>
     )
   }

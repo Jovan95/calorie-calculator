@@ -1,0 +1,50 @@
+.home-page {
+  text-align: center;
+  font-size: 35px;
+  background-image: linear-gradient(to bottom right, #5C258D, #4389A2);
+  min-height: 15vh;
+
+  h1 {
+    text-align: center;
+    font-size: 50px;
+    padding-top: 20px;
+    padding-bottom: 200px;
+  }
+
+  span {
+    color: #fff;
+    font-size: 27px;
+    text-transform: uppercase;
+    font-style: italic;
+  }
+
+  .hpButton {
+    text-align: center;
+  }
+
+  .linkHp {
+    padding: 25px;
+    border: 2px solid black;
+    border-radius: 12px;
+    font-size: 30px;
+    margin-top: 20px;
+    color: #fff;
+    display: inline-block;
+  }
+  .logoutBtn {
+    padding: 20px 50px 20px 50px;
+    border: 2px solid red;
+    border-radius: 10px;
+    background-color: #904e4e;
+    color: #fff;
+  }
+  .about {
+    text-align: left;
+    padding: 0px 80px 100px 80px;
+    font-size: 25px;
+
+  }
+  .about ul li {
+    padding: 20px;
+  }
+}
