@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ResetPasswordForm from '../forms/ResetPasswordForm';
 import { resetPassword } from '../../actions/auth';
-
+import './ResetPasswordPage.scss';
 
 class ResetPasswordPage extends React.Component {
   state = {
@@ -27,10 +27,10 @@ submit = data => this.props.resetPassword(data)
     const token = this.props.match.params.token;
 
     return(
-      <div>
-        {loading && !success && <Message>Validating your token</Message>}
-        {!loading && success && <ResetPasswordForm submit={this.submit} token={token} />}
-        {!loading && !success && <Message negative>Invalid Token</Message>}
+      <div className="resetPassPage">
+        {loading && !success && <div className="resetPassDiv"><Message>Validating your token</Message></div>}
+        {!loading && success && <div className="resetPassDiv"><ResetPasswordForm submit={this.submit} token={token} /></div>}
+        {!loading && !success && <div className="resetPassDiv"><Message negative>Invalid Token</Message></div>}
 
       </div>
     )

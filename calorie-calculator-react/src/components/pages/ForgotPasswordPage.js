@@ -21,7 +21,7 @@ class ForgotPasswordPage extends React.Component {
     return(
       <div className="forgotPass">
         {
-          success ? <Message>Email has been sent.</Message>
+          success ?<div className="forgotPassDiv"><Message>Email has been sent.</Message></div>
            :
           <div className="forgotPassDiv"><ForgotPasswordForm submit={this.submit} /></div>
         }
