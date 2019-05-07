@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import SingupForm from '../forms/SingupForm';
 import { singup } from '../../actions/singup';
+import './SingupPage.scss';
+
 
 class SingupPage extends React.Component {
   submit= (data) => this.props.singup(data)
@@ -10,9 +12,11 @@ class SingupPage extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="singUp">
         <h1>Sing Up for free</h1>
+      <div className="singUpForm">
         <SingupForm submit={this.submit} />
+      </div>
       </div>
     )
   }

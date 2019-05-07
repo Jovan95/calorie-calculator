@@ -2,13 +2,18 @@
   text-align: center;
   font-size: 35px;
   background-image: linear-gradient(to bottom right, #5C258D, #4389A2);
-  min-height: 15vh;
+  min-height: 100vh;
 
   h1 {
     text-align: center;
     font-size: 50px;
     padding-top: 20px;
-    padding-bottom: 200px;
+    color: white;
+    background:rgba(80,80,80,0.2);
+    border: 1px solid #fff;
+    border-radius: 12px;
+    width: 50%;
+    margin: auto;
   }
 
   span {
@@ -40,7 +45,7 @@
   }
   .about {
     text-align: left;
-    padding: 0px 80px 100px 80px;
+    padding: 200px 80px 100px 80px;
     font-size: 25px;
 
   }

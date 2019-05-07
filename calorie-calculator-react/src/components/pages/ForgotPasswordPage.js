@@ -4,6 +4,7 @@ import { Message } from 'semantic-ui-react';
 import ForgotPasswordForm from '../forms/ForgotPasswordForm';
 import { connect } from 'react-redux';
 import { resetPasswordRequest } from '../../actions/auth';
+import './ForgotPasswordPage.scss';
 
 class ForgotPasswordPage extends React.Component {
   state = {
@@ -18,11 +19,11 @@ class ForgotPasswordPage extends React.Component {
   render() {
     const { success } = this.state;
     return(
-      <div>
+      <div className="forgotPass">
         {
           success ? <Message>Email has been sent.</Message>
            :
-          <ForgotPasswordForm submit={this.submit} />
+          <div className="forgotPassDiv"><ForgotPasswordForm submit={this.submit} /></div>
         }
       </div>
     )

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { confirm } from '../../actions/auth';
 import { connect } from 'react-redux';
+import './ConfirmationPage.scss';
 
 class ConfirmationPage extends React.Component {
   state = {
@@ -22,13 +23,16 @@ class ConfirmationPage extends React.Component {
     return(
       <div>
         {loading && (
+        <div className="confirmationDiv">
         <Message icon>
           <Icon name="circle notched" loading />
           <Message.Header>Validating your email</Message.Header>
         </Message>
+        </div>
         )}
 
         {!loading && success &&
+          <div className="confirmationDiv">
           <Message icon>
             <Icon name="checkmark" />
             <Message.Content>
@@ -36,15 +40,18 @@ class ConfirmationPage extends React.Component {
               <Link to='/dashboard'>You can start losing weight now! Start now >></Link>
             </Message.Content>
           </Message>
+        </div>
         }
 
         {!loading && !success &&
+          <div className="confirmationDiv">
           <Message negative icon>
             <Icon name="warning sing" />
             <Message.Content>
               <Message.Header>Ooops, invalid token!</Message.Header>
             </Message.Content>
           </Message>
+         </div>
         }
       </div>
     )
