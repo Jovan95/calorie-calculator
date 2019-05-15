@@ -1,5 +1,6 @@
 import React from 'react';
 import "semantic-ui-css/semantic.min.css";
+import "./styles/index.scss";
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 import App from './App';
@@ -20,7 +21,7 @@ const store = createStore(
 
 if(localStorage.cCalJWT) {
   const payload = decode(localStorage.cCalJWT);
-  
+
   const user = {
     token: localStorage.cCalJWT,
     email: payload.email,

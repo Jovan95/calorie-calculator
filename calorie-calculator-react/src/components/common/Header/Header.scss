@@ -1,0 +1,36 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+
+  nav {
+    a {
+      color: #fff;
+      font-weight: bold;
+      &:active, &:visited {
+        color: #fff;
+      }
+
+
+      &:hover {
+        color: darken(#eee, 0.2);
+      }
+    }
+  }
+
+  .logo {
+    font-weight: bold;
+    font-size: 28px;
+  }
+
+  @media all and (max-width: 860px) {
+    & {
+      justify-content: center;
+      text-align: center;
+    }
+    nav {
+      display: none;
+    }
+  }
+}
