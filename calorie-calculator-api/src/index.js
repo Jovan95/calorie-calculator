@@ -2,7 +2,7 @@ import express from 'express';
 import path from 'path';
 import mongoose from 'mongoose';
 import auth from "./routes/auth";
-import singup from "./routes/singup"
+import signup from "./routes/signup"
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import Promise from 'bluebird';
@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 
 app.use('/api/auth', auth);
-app.use('/api/singup', singup);
+app.use('/api/signup', signup);
 
 app.get('/*', (req, res) => {
   console.log('req 2', req);

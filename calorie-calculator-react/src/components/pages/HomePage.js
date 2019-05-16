@@ -10,7 +10,7 @@ const HomePage = ({ isAuthenticated, logout }) => (
         <Header></Header>
         <div className="hero-content">
           <div className="hero-title">Welcome to <br/>Calorie Calculator</div>
-        <Link className="button large main" to="/singup">Create your Account</Link>
+        <Link className="button large main" to="/signup">Create your Account</Link>
         </div>
       </div>
       <div className="overlay"></div>

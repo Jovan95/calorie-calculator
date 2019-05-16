@@ -3,17 +3,21 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../../actions/auth';
 import { Link } from 'react-router-dom';
-import './Header.scss'
+import './Header.scss';
+import logo from '../../../assets/logo.png';
 
 class Header extends React.Component {
   render() {
-    const { isAuthenticated } = this.props;
+    const { isAuthenticated, logout } = this.props;
     return (
       <header className="container">
-        <div className="logo">CalorieCalculator</div>
+        <div className="logo-content">
+          <img className="logoImg" src={ logo } alt= "logo"/>
+          <div className="logo">CalorieCalculator</div>
+        </div>
         <nav>
           {isAuthenticated ?
-            (<button className="logoutBtn" onClick={ () => logout() }>Logout</button>) :
+            (<button className="logout-btn" onClick={ () => logout() }>logout</button>) :
             (<div><Link className="" to="/login">Login</Link></div>)
           }
         </nav>

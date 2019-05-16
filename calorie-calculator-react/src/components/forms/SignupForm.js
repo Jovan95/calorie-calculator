@@ -4,7 +4,7 @@ import { Form, Button } from 'semantic-ui-react';
 import Validator from 'validator';
 import InlineError from "../messages/InlineError";
 
-class SingupForm extends React.Component {
+class SignupForm extends React.Component {
   state={
     data:{
       email: '',
@@ -72,14 +72,14 @@ class SingupForm extends React.Component {
             />
             {errors.password && <InlineError text={errors.password} />}
           </Form.Field>
-        <Button primary>Sing Up</Button>
+        <Button primary>Sign Up</Button>
       </Form>
     );
   }
 };
 
-SingupForm.propTypes = {
+SignupForm.propTypes = {
   submit: PropTypes.func.isRequired
 };
 
-export default SingupForm;
+export default SignupForm;

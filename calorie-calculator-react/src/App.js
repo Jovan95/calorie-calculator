@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import HomePage from './components/pages/HomePage';
 import LoginPage from './components/pages/LoginPage';
-import SingupPage from './components/pages/SingupPage';
+import SignupPage from './components/pages/SignupPage';
 import ConfirmationPage from './components/pages/ConfirmationPage';
 import DashboardPage from './components/pages/DashboardPage';
 import ResetPasswordPage from './components/pages/ResetPasswordPage';
@@ -40,8 +40,8 @@ const App = ({ location }) =>
     />
   <GuestRoute
     location={location}
-    path="/singup"
-    exact component={SingupPage}
+    path="/signup"
+    exact component={SignupPage}
     />
   <UserRoute
     location={location}
