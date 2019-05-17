@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import { login } from '../../actions/auth';
 import { Link } from 'react-router-dom';
 import './LoginPage.scss';
+import Header from "../common/Header/Header";
+import logo from "../../assets/logo.png";
 
 class LoginPage extends React.Component  {
 
@@ -12,13 +14,22 @@ class LoginPage extends React.Component  {
 
   render () {
     return (
-      <div className="loginPage">
-        <h1>Login page</h1>
-      <div className="loginPageDiv">
-        <LoginForm submit={this.submit} />
-        <Link to="/forgot_password">Forgot Password?</Link>
+    <div className="login-page">
+      <div className="login-section">
+        <div className="login-content">
+          <div className="logo-content">
+            <img className="logoImg" src={ logo } alt= "logo"/>
+            <div className="logo">CalorieCalculator</div>
+          </div>
+          <div className="login-title">Welcome Back!</div>
+          <div className="login-form">
+            <LoginForm submit={this.submit} />
+            <Link to="/forgot_password">Forgot Password?</Link>
+          </div>
+        </div>
+       <div className="overlay"></div>
       </div>
-      </div>
+    </div>
     )
   }
 };
