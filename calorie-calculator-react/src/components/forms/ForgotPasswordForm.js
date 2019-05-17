@@ -3,6 +3,7 @@ import { Form, Button, Message } from 'semantic-ui-react';
 import InlineError from '../messages/InlineError';
 import PropTypes from 'prop-types';
 import Validator from 'validator';
+import "./ForgotPasswordForm.scss";
 
 class ForgotPasswordForm extends React.Component {
   constructor(props) {
@@ -51,7 +52,7 @@ onChange = e =>
         <Form onSubmit={this.onSubmit} loading={loading}>
           {!!errors.global && <Message negative>{errors.global}</Message>}
           <Form.Field error={!!errors.email}>
-            <label htmlFor='email'>Email:</label>
+            <label className="forgotpass-label" htmlFor='email'>Email:</label>
             <input type='email'
                    id='email'
                    name='email'

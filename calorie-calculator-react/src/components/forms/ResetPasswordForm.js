@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Form } from 'semantic-ui-react';
 import InlineError from "../messages/InlineError";
+import './ResetPasswordForm.scss';
 
 class ResetPasswordForm extends React.Component {
   state = {
@@ -49,7 +50,7 @@ validate = data => {
       <div>
         <Form onSubmit={this.onSubmit} loading={loading}>
           <Form.Field errors={!!errors.password}>
-            <label htmlFor="password">Choose your new password</label>
+            <label className="reset-label" htmlFor="password">Choose your new password:</label>
             <input
               id='password'
               type='password'
@@ -61,18 +62,18 @@ validate = data => {
             {errors.password && <InlineError text={errors.password} />}
           </Form.Field>
           <Form.Field errors={!!errors.password}>
-            <label htmlFor="passwordConfirmation">Confirm your new password</label>
+            <label className="reset-label" htmlFor="passwordConfirmation">Confirm your new password:</label>
             <input
               id='passwordConfirmation'
               type='password'
               name='passwordConfirmation'
               value={data.passwordConfirmation}
               onChange={this.onChange}
-              placeholder="password"
+              placeholder="Confirm password"
             />
             {errors.password && <InlineError text={errors.password} />}
           </Form.Field>
-          <Button basic color='red'>Reset</Button>
+          <Button className="reset-btn" basic color='red'>Reset</Button>
         </Form>
       </div>
     )

@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import ResetPasswordForm from '../forms/ResetPasswordForm';
 import { resetPassword } from '../../actions/auth';
 import './ResetPasswordPage.scss';
+import logo from "../../assets/logo.png";
 
 class ResetPasswordPage extends React.Component {
   state = {
@@ -27,11 +28,26 @@ submit = data => this.props.resetPassword(data)
     const token = this.props.match.params.token;
 
     return(
-      <div className="resetPassPage">
+      <div className="resetpass-page">
         {loading && !success && <div className="resetPassDiv"><Message>Validating your token</Message></div>}
-        {!loading && success && <div className="resetPassDiv"><ResetPasswordForm submit={this.submit} token={token} /></div>}
-        {!loading && !success && <div className="resetPassDiv"><Message negative>Invalid Token</Message></div>}
 
+        {
+          !loading && success &&
+          <div className="resetpass-section">
+            <div className="resetpass-content">
+              <div className="logo-content">
+                <img className="logoImg" src={ logo } alt= "logo"/>
+                <div className="logo">CalorieCalculator</div>
+              </div>
+              <div className="resetpass-form">
+                <ResetPasswordForm submit={this.submit} token={token} />
+              </div>
+            </div>
+            <div className="overlay"></div>
+          </div>
+        }
+
+        {!loading && !success && <div className="resetPassDiv"><Message negative>Invalid Token</Message></div>}
       </div>
     )
   }

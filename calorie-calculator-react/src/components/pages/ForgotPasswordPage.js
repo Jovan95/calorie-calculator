@@ -5,6 +5,7 @@ import ForgotPasswordForm from '../forms/ForgotPasswordForm';
 import { connect } from 'react-redux';
 import { resetPasswordRequest } from '../../actions/auth';
 import './ForgotPasswordPage.scss';
+import logo from "../../assets/logo.png";
 
 class ForgotPasswordPage extends React.Component {
   state = {
@@ -19,11 +20,32 @@ class ForgotPasswordPage extends React.Component {
   render() {
     const { success } = this.state;
     return(
-      <div className="forgotPass">
+      <div className="forgotpass-page">
         {
-          success ?<div className="forgotPassDiv"><Message>Email has been sent.</Message></div>
+          success ?
+          <div className="forgotpass-section">
+            <div className="logo-content">
+              <img className="logoImg" src={ logo } alt= "logo"/>
+              <div className="logo">CalorieCalculator</div>
+            </div>
+            <div className="forgotpass-div">
+              <Message>Email has been sent.</Message>
+            </div>
+          </div>
            :
-          <div className="forgotPassDiv"><ForgotPasswordForm submit={this.submit} /></div>
+          <div className="forgotpass-section">
+            <div className="forgotpass-content">
+              <div className="logo-content">
+                <img className="logoImg" src={ logo } alt= "logo"/>
+                <div className="logo">CalorieCalculator</div>
+              </div>
+              <div className="forgotpass-form">
+                <div className="forgotpass-title">In order to reset your password please enter your email</div>
+                <ForgotPasswordForm submit={this.submit} />
+              </div>
+          </div>
+            <div className="overlay"></div>
+        </div>
         }
       </div>
     )
