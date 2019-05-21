@@ -6,8 +6,8 @@ import { sendConfirmationEmail } from '../mailer';
 const router = express.Router();
 
 router.post("/", (req, res) => {
-  const { email, password } = req.body.credentials;
-  const user = new User({ email });
+  const { email, password, age, name, lastName, height, weight, gender } = req.body.credentials;
+  const user = new User({ email, age, name, lastName, height, weight, gender });
   user.setPassword(password);
   user.setConfirmationToken();
   user

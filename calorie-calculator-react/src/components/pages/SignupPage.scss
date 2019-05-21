@@ -12,16 +12,17 @@
   }
 
   .signup-title {
-    text-align: center;
+    position: absolute;
+    top: 120px;
+    right: 265px;
     font-size: 60px;
     font-family: Arial;
-    padding-top: 100px;
     line-height: 75px;
   }
 
   .signup-form {
     position: absolute;
-    top: 400px;
+    top: 320px;
     right: 200px;
     width: 35%;
     color: #fff;
