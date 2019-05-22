@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import HomePage from './components/pages/HomePage/HomePage';
 import LoginPage from './components/pages/LoginPage/LoginPage';
 import SignupPage from './components/pages/SignupPage/SignupPage';
+import ProfilePage from './components/pages/ProfilePage/ProfilePage';
 import ConfirmationPage from './components/pages/ConfirmationPage/ConfirmationPage';
 import DashboardPage from './components/pages/DashboardPage/DashboardPage';
 import ResetPasswordPage from './components/pages/ResetPasswordPage/ResetPasswordPage';
@@ -48,6 +49,11 @@ const App = ({ location }) =>
     path="/dashboard"
     exact component={DashboardPage}
     />
+    <UserRoute
+      location={location}
+      path="/profile"
+      exact component={ProfilePage}
+      />
 </div>;
 
 App.propTypes = {

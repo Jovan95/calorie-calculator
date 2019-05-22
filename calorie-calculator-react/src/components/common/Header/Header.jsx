@@ -17,8 +17,14 @@ class Header extends React.Component {
         </div>
         <nav>
           {isAuthenticated ?
-            (<button className="logout-btn" onClick={ () => logout() }>logout</button>) :
-            (<div><Link className="" to="/login">Login</Link></div>)
+            (
+              <div>
+              <Link className="nav-link" to='/profile'>Your Profile</Link>
+              <button className="logout-btn" onClick={ () => logout() }>logout</button>
+              </div>
+            )
+                 :
+            (<div><Link className="nav-link" to="/login">Login</Link></div>)
           }
         </nav>
       </header>
