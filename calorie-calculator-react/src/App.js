@@ -1,15 +1,15 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import HomePage from './components/pages/HomePage';
-import LoginPage from './components/pages/LoginPage';
-import SignupPage from './components/pages/SignupPage';
-import ConfirmationPage from './components/pages/ConfirmationPage';
-import DashboardPage from './components/pages/DashboardPage';
-import ResetPasswordPage from './components/pages/ResetPasswordPage';
+import HomePage from './components/pages/HomePage/HomePage';
+import LoginPage from './components/pages/LoginPage/LoginPage';
+import SignupPage from './components/pages/SignupPage/SignupPage';
+import ConfirmationPage from './components/pages/ConfirmationPage/ConfirmationPage';
+import DashboardPage from './components/pages/DashboardPage/DashboardPage';
+import ResetPasswordPage from './components/pages/ResetPasswordPage/ResetPasswordPage';
 import UserRoute from './components/routes/UserRoute';
 import GuestRoute from './components/routes/GuestRoute';
 import PropTypes from "prop-types";
-import ForgotPasswordPage from './components/pages/ForgotPasswordPage';
+import ForgotPasswordPage from './components/pages/ForgotPasswordPage/ForgotPasswordPage';
 
 const App = ({ location }) =>
 <div className="ui-container">

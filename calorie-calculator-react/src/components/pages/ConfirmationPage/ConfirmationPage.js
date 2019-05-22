@@ -2,7 +2,7 @@ import React from 'react';
 import { Message, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { confirm } from '../../actions/auth';
+import { confirm } from '../../../actions/auth';
 import { connect } from 'react-redux';
 import './ConfirmationPage.scss';
 

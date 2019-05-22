@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form,Button, Message } from 'semantic-ui-react';
 import Validator from 'validator';
-import InlineError from "../messages/InlineError";
+import InlineError from "../../messages/InlineError";
 import PropTypes from 'prop-types';
 import './LoginForm.scss';
 

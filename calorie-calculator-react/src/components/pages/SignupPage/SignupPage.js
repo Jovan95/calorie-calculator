@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import SignupForm from '../forms/SignupForm';
-import { signup } from '../../actions/signup';
+import SignupForm from '../../forms/SignupForm/SignupForm';
+import { signup } from '../../../actions/signup';
 import './SignupPage.scss';
-import Header from '../common/Header/Header';
+import Header from '../../common/Header/Header';
 
 
 class SignupPage extends React.Component {

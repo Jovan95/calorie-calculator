@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Button, Message } from 'semantic-ui-react';
-import InlineError from '../messages/InlineError';
+import InlineError from '../../messages/InlineError';
 import PropTypes from 'prop-types';
 import Validator from 'validator';
 import "./ForgotPasswordForm.scss";

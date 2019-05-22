@@ -1,12 +1,12 @@
 import React from 'react';
-import LoginForm from '../forms/LoginForm';
+import LoginForm from '../../forms/LoginForm/LoginForm';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { login } from '../../actions/auth';
+import { login } from '../../../actions/auth';
 import { Link } from 'react-router-dom';
 import './LoginPage.scss';
-import Header from "../common/Header/Header";
-import logo from "../../assets/logo.png";
+import Header from "../../common/Header/Header";
+import logo from "../../../assets/logo.png";
 
 class LoginPage extends React.Component  {
 

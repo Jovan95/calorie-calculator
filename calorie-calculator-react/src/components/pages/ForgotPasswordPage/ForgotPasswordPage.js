@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Message } from 'semantic-ui-react';
-import ForgotPasswordForm from '../forms/ForgotPasswordForm';
+import ForgotPasswordForm from '../../forms/ForgotPasswordForm/ForgotPasswordForm';
 import { connect } from 'react-redux';
-import { resetPasswordRequest } from '../../actions/auth';
+import { resetPasswordRequest } from '../../../actions/auth';
 import './ForgotPasswordPage.scss';
-import logo from "../../assets/logo.png";
+import logo from "../../../assets/logo.png";
 
 class ForgotPasswordPage extends React.Component {
   state = {

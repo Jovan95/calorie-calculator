@@ -1,12 +1,12 @@
 import React from 'react';
 import { Message } from 'semantic-ui-react';
-import { validateToken } from '../../actions/auth';
+import { validateToken } from '../../../actions/auth';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import ResetPasswordForm from '../forms/ResetPasswordForm';
-import { resetPassword } from '../../actions/auth';
+import ResetPasswordForm from '../../forms/ResetPasswordForm/ResetPasswordForm';
+import { resetPassword } from '../../../actions/auth';
 import './ResetPasswordPage.scss';
-import logo from "../../assets/logo.png";
+import logo from "../../../assets/logo.png";
 
 class ResetPasswordPage extends React.Component {
   state = {

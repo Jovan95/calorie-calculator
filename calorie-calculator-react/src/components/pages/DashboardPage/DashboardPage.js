@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import ConfirmEmailMessage from "../messages/ConfirmEmailMessage";
+import ConfirmEmailMessage from "../../messages/ConfirmEmailMessage";
 import './DashboardPage.scss';
 
 class DashboardPage extends React.Component {

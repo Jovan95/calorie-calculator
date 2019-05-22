@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Form } from 'semantic-ui-react';
-import InlineError from "../messages/InlineError";
+import InlineError from "../../messages/InlineError";
 import './ResetPasswordForm.scss';
 
 class ResetPasswordForm extends React.Component {

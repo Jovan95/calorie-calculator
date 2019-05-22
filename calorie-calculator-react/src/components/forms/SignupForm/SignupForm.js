@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Form, Button } from 'semantic-ui-react';
 import Validator from 'validator';
-import InlineError from "../messages/InlineError";
+import InlineError from "../../messages/InlineError";
 import "./SignupForm.scss"
 
 class SignupForm extends React.Component {
