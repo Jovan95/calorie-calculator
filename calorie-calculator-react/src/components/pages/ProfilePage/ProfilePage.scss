@@ -9,4 +9,73 @@
     z-index: 2;
     color: #fff;
   }
+
+  .profile-flex {
+    display: flex;
+  }
+
+  .profile-nav {
+    background-color: rgba(0,0,0,0.7);
+    width: 200px;
+    height: 78vh;
+    margin-top: 150px;
+    border: 1px solid #000;
+    border-radius: 5px;
+
+    .nav-btn {
+      display: block;
+      width: 197px;
+      height: 65px;
+      font-weight: bold;
+      border: 1px solid #ed553b;
+      border-radius: 4px;
+      margin-bottom: 3px;
+      font-family: Arial;
+      background-color: #000;
+      color: #fff;
+      letter-spacing: 3px;
+      font-size: 17px;
+
+      &:active {
+        background-color:#ed553b;
+        border-radius: 0px;
+      }
+    }
+  }
+
+  .page-content {
+    margin-top: 150px;
+    width: 100%;
+    background-color: rgba(237, 237, 237, 0.2);
+    border-radius: 5px;
+    border-top: 3px solid #ed553b;
+
+    .about-list {
+      list-style: none;
+      font-size: 20px;
+      background-color: rgba(0,0,0,0.8);
+      margin: 0px auto;
+      padding: 30px;
+      width: 50%;
+      margin-top:250px;
+      text-align: center;
+      border-radius: 5px;
+
+      .list-item {
+        margin-bottom: 30px;
+      }
+    }
+    .about-img-section {
+      text-align: center;
+
+     .about-img {
+       height: 150px;
+       border: 3px solid #ed553b;
+       border-radius: 50%;
+       padding: 15px;
+       margin-top: -75px;
+       background-color: rgba(255,255,255,1);
+     }
+    }
+  }
 }
