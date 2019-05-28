@@ -1,7 +1,7 @@
 import { USER_LOGGED_IN, USER_LOGGED_OUT } from '../types';
 import api from '../api';
 
-export const userLoggedIn = (user) => ({
+export const userLoggedIn = (user, _id) => ({
   type: USER_LOGGED_IN,
   user
 })
@@ -36,5 +36,5 @@ export const resetPasswordRequest = ({ email }) => () =>
 export const validateToken = (token) => () =>
     api.user.validateToken(token);
 
-export const resetPassword = (data) => () => 
+export const resetPassword = (data) => () =>
     api.user.resetPassword(data);

@@ -25,6 +25,7 @@ if(localStorage.cCalJWT) {
   const user = {
     token: localStorage.cCalJWT,
     email: payload.email,
+    _id: payload._id,
     confirmed: payload.confirmed
    };
   store.dispatch(userLoggedIn(user));

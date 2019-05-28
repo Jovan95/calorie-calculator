@@ -7,8 +7,9 @@ import './Header.scss';
 import logo from '../../../assets/logo.png';
 
 class Header extends React.Component {
+
   render() {
-    const { isAuthenticated, logout } = this.props;
+    const { isAuthenticated, logout, userID } = this.props;
     return (
       <header className="container">
         <div className="logo-content">
@@ -19,7 +20,7 @@ class Header extends React.Component {
           {isAuthenticated ?
             (
               <div>
-              <Link className="nav-link" to='/profile'>Your Profile</Link>
+              <Link className="nav-link" onClick={this.onClick} to={`/profile/${userID}`}>Your Profile</Link>
               <button className="logout-btn" onClick={ () => logout() }>logout</button>
               </div>
             )
@@ -39,7 +40,8 @@ Header.propTypes = {
 
 function  mapStateToProps(state) {
   return {
-    isAuthenticated: !!state.user.token
+    isAuthenticated: !!state.user.token,
+    userID: state.user._id
   }
 }
 

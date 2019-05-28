@@ -13,6 +13,8 @@ export default {
     validateToken: token =>
       axios.post('/api/auth/validate_token', { token }),
     resetPassword: data =>
-      axios.post('/api/auth/reset_password', { data })
+      axios.post('/api/auth/reset_password', { data }),
+    getData: _id =>
+      axios.post('/api/profile', { _id}).then(res => res.data.data)
   }
 };

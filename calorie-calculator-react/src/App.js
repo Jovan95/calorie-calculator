@@ -51,7 +51,7 @@ const App = ({ location }) =>
     />
     <UserRoute
       location={location}
-      path="/profile"
+      path="/profile/:userID"
       exact component={ProfilePage}
       />
 </div>;

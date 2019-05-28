@@ -4,6 +4,8 @@ import Header from '../../common/Header/Header';
 import "./ProfilePage.scss";
 import male from "../../../assets/male.png";
 import female from "../../../assets/female.png";
+import { getData } from '../../../actions/profile';
+import { connect } from 'react-redux';
 
 class ProfilePage extends React.Component {
   constructor(props) {
@@ -18,6 +20,10 @@ class ProfilePage extends React.Component {
       gender:'',
       activeTab: 'about'
     }
+  }
+
+  componentDidMount() {
+    this.props.getData(this.props.match.params.userID).then(data => this.setState({ ...data }));
   }
 
   onClick = (e) => {
@@ -77,4 +83,4 @@ class ProfilePage extends React.Component {
 }
 
 
-export default ProfilePage;
+export default connect(null,{ getData })(ProfilePage);

@@ -60,6 +60,7 @@ router.post('/reset_password', (req, res) => {
       res.status(401).json({errors: {global : "Invalid Token"}});
     } else {
       User.findOne({ _id: decoded._id }).then(user => {
+        console.log(user);
         if (user) {
           user.setPassword(password);
           user.save().then(() => res.json({}))

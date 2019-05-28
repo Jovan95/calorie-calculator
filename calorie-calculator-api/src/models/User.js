@@ -8,12 +8,15 @@ const schema = new mongoose.Schema(
   {
   email : {type: String, required: true, lowercase: true, index: true, unique: true},
   passwordHash: {type: String, required: true},
-  name: {type: String, required: true},
-  lastName: {type: String, required: true},
-  gender: {type: String, required: true},
-  age: {type: String, required: true},
-  height: {type: String, required: true},
-  weight: {type: String, required: true},
+  _id: {type: mongoose.Schema.Types.ObjectId, required: true},
+  about:{
+      name: {type: String, required: true},
+      lastName: {type: String, required: true},
+      gender: {type: String, required: true},
+      age: {type: String, required: true},
+      height: {type: String, required: true},
+      weight: {type: String, required: true}
+  },
   confirmed: { type: Boolean, default: false},
   confirmationToken: { type: String, deafault: ""}
   },
@@ -54,6 +57,7 @@ schema.methods.generateJWT = function generateJWT() {
   return jwt.sign(
     {
     email: this.email,
+    _id: this._id,
     confirmed: this.confirmed
     },
     process.env.JWT_SECRET)
@@ -63,6 +67,7 @@ schema.methods.toAuthJSON = function toAuthJSON() {
   return {
     email: this.email,
     confirmed: this.confirmed,
+    _id: this._id,
     token: this.generateJWT()
   }
 };
