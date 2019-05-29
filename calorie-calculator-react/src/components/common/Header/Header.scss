@@ -8,6 +8,7 @@ header {
     a {
       color: #fff;
       font-weight: bold;
+      padding: 8px;
       &:active, &:visited {
         color: #fff;
       }
@@ -35,6 +36,7 @@ header {
         font-weight: bold;
         font-size: 28px;
         line-height: 50px;
+        color: #fff;
       }
       .logoImg {
         height: 50px;

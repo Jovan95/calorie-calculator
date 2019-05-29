@@ -17,13 +17,48 @@ class ProfilePage extends React.Component {
       age:0,
       height:0,
       weight:0,
-      gender:'',
+      gender: '',
+      dailyIntake: '',
       activeTab: 'about'
     }
+    this.calIntake = this.calIntake.bind(this);
   }
 
   componentDidMount() {
     this.props.getData(this.props.match.params.userID).then(data => this.setState({ ...data }));
+
+  }
+
+  calIntake () {
+    if(this.state.gender === 'male') {
+      if(this.state.age < 18) {
+        const cal = this.state.weight * 17.5 + 651;
+        this.setState({dailyIntake: cal });
+      }else if(this.state.age > 17 && this.state.age < 31) {
+        const cal = this.state.weight * 15.3 + 679;
+        this.setState({dailyIntake: cal });
+      }else if(this.state.age > 29 && this.state.age < 61) {
+        const cal = this.state.weight * 11.6 + 879;
+        this.setState({dailyIntake: cal });
+      }else if(this.state.age > 60) {
+        const cal = this.state.weight * 13.5 + 487;
+        this.setState({dailyIntake: cal });
+      }
+    }else if(this.state.gender === 'female') {
+      if(this.state.age < 18) {
+        const cal = this.state.weight * 12.2 + 746;
+        this.setState({dailyIntake: cal });
+      }else if(this.state.age > 17 && this.state.age < 31) {
+        const cal = this.state.weight * 14.7 + 496;
+        this.setState({dailyIntake: cal });
+      }else if(this.state.age > 29 && this.state.age < 61) {
+        const cal = this.state.weight * 8.7 + 829;
+        this.setState({dailyIntake: cal });
+      }else if(this.state.age > 60) {
+        const cal = this.state.weight * 10.5 + 596;
+        this.setState({dailyIntake: cal });
+      }
+    }
   }
 
   onClick = (e) => {
@@ -32,6 +67,7 @@ class ProfilePage extends React.Component {
       activeTab: e.target.value
     })
   }
+
 
   render () {
     const { activeTab } = this.state;
@@ -70,7 +106,11 @@ class ProfilePage extends React.Component {
                 {
                   activeTab === 'intake' &&
                   <div className="page-content">
-                    intake
+                    <div className="page-area">
+                      <h1>Your daily intake:</h1>
+                    <button onClick={this.calIntake}>Calculate</button>
+                      <h1>{this.state.dailyIntake+"cal"}</h1>
+                    </div>
                   </div>
                 }
             </div>
@@ -80,6 +120,10 @@ class ProfilePage extends React.Component {
     </div>
     )
   }
+}
+
+ProfilePage.propTypes = {
+  getData: PropTypes.func.isRequired
 }
 
 

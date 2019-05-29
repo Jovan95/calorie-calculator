@@ -8,19 +8,21 @@ import logo from '../../../assets/logo.png';
 
 class Header extends React.Component {
 
+
   render() {
     const { isAuthenticated, logout, userID } = this.props;
     return (
       <header className="container">
-        <div className="logo-content">
+        <div className="logo-content" onClick={this.onClick} >
           <img className="logoImg" src={ logo } alt= "logo"/>
-          <div className="logo">CalorieCalculator</div>
+          <a href="/" className="logo">CalorieCalculator</a>
         </div>
         <nav>
           {isAuthenticated ?
             (
               <div>
-              <Link className="nav-link" onClick={this.onClick} to={`/profile/${userID}`}>Your Profile</Link>
+              <Link className="nav-link" to="/dashboard">Dashboard</Link>
+              <Link className="nav-link" to={`/profile/${userID}`}>Your Profile</Link>
               <button className="logout-btn" onClick={ () => logout() }>logout</button>
               </div>
             )
